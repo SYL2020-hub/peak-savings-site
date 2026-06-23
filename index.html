@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Peak Savings — Know where your money goes. Keep more of it.</title>
+<meta name="description" content="Peak Savings reads your bank statements on your iPhone and turns them into a clear picture that helps you decide and save. Nothing leaves your phone. Free, in private testing." />
+<meta property="og:title" content="Peak Savings — Know where your money goes. Keep more of it." />
+<meta property="og:description" content="Reads your bank statements on your iPhone and turns them into a clear picture that helps you decide and save. Nothing leaves your device. Free, in private testing." />
+<meta property="og:type" content="website" />
+<meta name="theme-color" content="#FFFFFF" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Crect%20width='100'%20height='100'%20rx='24'%20fill='%23FF2E8C'/%3E%3Cpath%20d='M27%2066%20L50%2035%20L73%2066'%20fill='none'%20stroke='%23fff'%20stroke-width='13'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3C/svg%3E" />
+<style>
+/* ============================================================
+   Peak Savings — landing page (simple, short, bilingual EN/繁).
+   Drop screenshots into landing/screens/ (filenames in each
+   placeholder) and they appear automatically.
+   ============================================================ */
+:root{
+  --bg:#FFFFFF; --surface-2:#F2F2F4; --surface-3:#E8E8EC; --hairline:#EBEBEE; --border:#A6A6AE;
+  --text-1:#17171A; --text-2:#55555C; --text-3:#A6A6AE;
+  --accent:#FF2E8C; --accent-press:#F01979; --accent-weak:#FFEAF3; --accent-line:#FFC2DD; --on-accent:#FFFFFF;
+  --hero-a:#FF2E8C; --hero-b:#D40070; --gain:#1F8A5F; --gain-weak:#DBEFE7;
+  --font-serif:Georgia,"Times New Roman",serif;
+  --font-sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;
+  --r-md:16px; --r-lg:20px; --r-xl:28px; --r-pill:999px;
+  --shadow-hero:0 10px 28px rgba(255,46,140,.28);
+  --ease:cubic-bezier(.22,.61,.36,1); --max:1040px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth} html,body{overflow-x:hidden}
+body{margin:0;background:var(--bg);color:var(--text-1);font-family:var(--font-sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+html[lang^="zh"] body{font-family:var(--font-sans),"PingFang HK","PingFang TC","Microsoft JhengHei",sans-serif}
+html[lang^="zh"] .amount,html[lang^="zh"] h1,html[lang^="zh"] h2{letter-spacing:0}
+img,svg{max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--accent)}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15px;border-radius:var(--r-pill);padding:13px 24px;border:1px solid transparent;cursor:pointer;transition:transform .15s var(--ease),background .15s var(--ease)}
+.btn-primary{background:var(--accent);color:var(--on-accent)}
+.btn-primary:hover{background:var(--accent-press);transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--text-1);border-color:var(--border)}
+.btn-ghost:hover{background:var(--surface-2)}
+.btn-lg{padding:15px 28px;font-size:15.5px}
+.btn:active{transform:translateY(0) scale(.98)}
+a:focus-visible,.btn:focus-visible,.lang button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:10px}
+
+/* ribbon */
+.ribbon{background:linear-gradient(90deg,var(--accent-weak),#FFF4F9);border-bottom:1px solid var(--accent-line);color:var(--accent-press);font-size:12.5px;font-weight:600;text-align:center;padding:9px 16px}
+.ribbon .tag{display:inline-block;background:var(--accent);color:#fff;font-weight:700;font-size:10.5px;letter-spacing:.6px;padding:2px 8px;border-radius:5px;text-transform:uppercase;margin-right:8px}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--hairline)}
+.nav-in{display:flex;align-items:center;gap:12px;height:64px;max-width:var(--max);margin:0 auto;padding:0 24px}
+.brand{display:flex;align-items:center;gap:11px;font-family:var(--font-serif);font-weight:600;font-size:20px;letter-spacing:-.3px}
+.brand .chip{font-family:var(--font-sans);font-size:9.5px;font-weight:700;letter-spacing:.6px;color:var(--accent);background:var(--accent-weak);border:1px solid var(--accent-line);padding:2px 6px;border-radius:6px;text-transform:uppercase}
+.mark{width:34px;height:34px;border-radius:24%;display:block}
+.lang{display:inline-flex;align-items:center;gap:2px;background:var(--surface-2);border:1px solid var(--hairline);border-radius:var(--r-pill);padding:3px;margin-left:auto}
+.lang button{border:none;background:transparent;cursor:pointer;font:inherit;font-size:12.5px;font-weight:700;color:var(--text-2);padding:5px 11px;border-radius:var(--r-pill);line-height:1;transition:all .15s var(--ease)}
+.lang button.on{background:var(--text-1);color:#fff}
+.lang button:not(.on):hover{color:var(--text-1)}
+.nav .btn-primary{padding:10px 18px;font-size:14px}
+
+/* hero */
+.hero{padding:72px 0 36px}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.pill-privacy{display:inline-flex;align-items:center;gap:8px;background:var(--surface-2);border:1px solid var(--hairline);border-radius:var(--r-pill);padding:7px 14px;font-size:12.5px;font-weight:600;color:var(--text-2);margin-bottom:22px}
+.pill-privacy .dot{width:7px;height:7px;border-radius:50%;background:var(--gain);box-shadow:0 0 0 3px var(--gain-weak);flex:0 0 auto}
+h1.hero-title{font-family:var(--font-serif);font-weight:600;font-size:52px;line-height:1.05;letter-spacing:-1.3px;margin:0 0 18px;text-wrap:balance}
+h1.hero-title .pink{color:var(--accent)}
+.hero-sub{font-size:18px;color:var(--text-2);line-height:1.6;max-width:38ch;margin:0 0 26px;text-wrap:pretty}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.hero-note{font-size:13px;color:var(--text-3);margin-top:16px}
+.hero-shot{display:flex;justify-content:center;position:relative}
+.hero-shot::after{content:"";position:absolute;inset:auto 0 -8% 0;height:55%;background:radial-gradient(50% 60% at 50% 50%,rgba(255,46,140,.20),transparent 70%);filter:blur(20px);z-index:-1}
+@media(max-width:880px){
+  .hero-grid{grid-template-columns:1fr;gap:34px;text-align:center}
+  h1.hero-title{font-size:38px}
+  .hero-sub{margin-left:auto;margin-right:auto}
+  .hero-cta,.pill-privacy{justify-content:center;margin-left:auto;margin-right:auto}
+}
+
+/* phone screenshot frame (auto-fallback placeholder if image missing) */
+.phone{width:min(280px,calc(100vw - 60px));border-radius:42px;background:#0b0b0d;padding:10px;box-shadow:0 30px 80px rgba(23,23,26,.18)}
+.phone .screen{position:relative;border-radius:32px;overflow:hidden;background:var(--surface-2);aspect-ratio:9/19.5;display:flex}
+.phone .screen img{width:100%;height:100%;object-fit:cover;display:block}
+.phone .ph{display:none;flex:1;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--text-3);font-size:12.5px;font-weight:600;text-align:center;padding:20px;border:2px dashed var(--border);border-radius:32px}
+.phone .ph b{color:var(--text-2)}
+.phone .ph .ico{font-size:26px}
+
+/* privacy band */
+.band{background:var(--text-1);color:#fff;padding:64px 0;margin-top:24px}
+.band .eyebrow{color:var(--accent-line)}
+.band h2{font-family:var(--font-serif);font-size:32px;letter-spacing:-.8px;margin:12px 0 12px;font-weight:600;max-width:20ch;text-wrap:balance}
+.band p.lead{color:rgba(255,255,255,.7);font-size:16.5px;max-width:54ch;margin:0 0 36px;text-wrap:pretty}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.pc{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--r-lg);padding:22px}
+.pc .ic{width:40px;height:40px;border-radius:12px;background:var(--accent);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.pc h3{font-size:15.5px;margin:0 0 7px}
+.pc p{font-size:13.5px;color:rgba(255,255,255,.62);margin:0;line-height:1.55}
+@media(max-width:760px){.pgrid{grid-template-columns:1fr}}
+
+/* showcase */
+.section{padding:72px 0}
+.sec-head{text-align:center;max-width:600px;margin:0 auto 44px}
+.sec-head h2{font-family:var(--font-serif);font-size:36px;letter-spacing:-1px;margin:12px 0 12px;font-weight:600;text-wrap:balance}
+.sec-head p{font-size:16.5px;color:var(--text-2);margin:0;text-wrap:pretty}
+.shots{display:flex;gap:30px;justify-content:center;flex-wrap:wrap}
+.shot{display:flex;flex-direction:column;align-items:center;gap:14px;max-width:280px;margin:0}
+.shot figcaption{font-size:13.5px;color:var(--text-2);font-weight:600;text-align:center;max-width:24ch}
+
+/* why-it-matters (insight -> decisions -> savings) */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:780px;margin:36px auto 0}
+.why-item{background:var(--surface-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:22px;text-align:left}
+.why-item .ic{width:38px;height:38px;border-radius:11px;background:var(--accent-weak);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:12px}
+.why-item p{margin:0;font-size:14.5px;color:var(--text-1);font-weight:600;line-height:1.5}
+.why-item p small{display:block;font-weight:500;color:var(--text-2);margin-top:5px;font-size:12.5px;line-height:1.5}
+@media(max-width:700px){.why-grid{grid-template-columns:1fr;gap:14px}}
+
+/* CTA strip */
+.cta-strip{text-align:center;padding:80px 0}
+.cta-card{background:linear-gradient(160deg,var(--hero-a),var(--hero-b));border-radius:var(--r-xl);padding:54px 32px;color:#fff;box-shadow:var(--shadow-hero);max-width:760px;margin:0 auto}
+.cta-card h2{font-family:var(--font-serif);font-size:34px;letter-spacing:-.8px;margin:0 0 12px;font-weight:600}
+.cta-card p{color:rgba(255,255,255,.85);font-size:16.5px;margin:0 0 26px}
+.btn-white{background:#fff;color:var(--accent)}
+.btn-white:hover{background:#fff;transform:translateY(-1px)}
+
+/* footer */
+footer{background:var(--text-1);color:rgba(255,255,255,.6);padding:40px 0;font-size:13px;text-align:center}
+footer .fb{display:inline-flex;align-items:center;gap:10px;color:#fff;font-family:var(--font-serif);font-size:18px;font-weight:600;margin-bottom:10px}
+footer .fb .mark{width:26px;height:26px}
+footer .legal{max-width:62ch;margin:8px auto 0;line-height:1.6}
+
+@media(max-width:600px){
+  .wrap{padding:0 18px}
+  .hero{padding:36px 0 12px}
+  .section{padding:46px 0}
+  h1.hero-title{font-size:30px;letter-spacing:-1px}
+  .hero-sub{font-size:16px;max-width:none}
+  .hero-cta .btn{flex:1 1 auto;justify-content:center}
+  .sec-head{margin-bottom:30px}
+  .sec-head h2,.cta-card h2,.band h2,.pt-copy h2{font-size:25px}
+  .sec-head p,.band p.lead{font-size:15px}
+  .band{padding:48px 0}
+  .cta-card{padding:38px 20px}
+  .why-item{padding:18px}
+  /* phone mockups: smaller so the screenshots don't dominate on a phone */
+  .phone{width:min(220px,calc(100vw - 130px));border-radius:34px;padding:8px;box-shadow:0 14px 36px rgba(23,23,26,.15)}
+  .phone .screen{border-radius:26px}
+}
+@media(max-width:400px){
+  h1.hero-title{font-size:26px}
+  .hero-note{font-size:12px}
+  .phone{width:min(196px,calc(100vw - 120px))}
+  .lang button{padding:5px 9px;font-size:12px}
+  .nav .btn-primary{font-size:13px;padding:9px 13px}
+}
+</style>
+</head>
+<body>
+
+<!-- shared SVG: the Peak mark -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <linearGradient id="peakTile" x1="0" y1="0" x2="0.85" y2="1">
+    <stop offset="0" stop-color="#FF4D9E"/><stop offset=".55" stop-color="#FF2E8C"/><stop offset="1" stop-color="#D40070"/>
+  </linearGradient>
+  <symbol id="peakmark" viewBox="0 0 100 100">
+    <rect width="100" height="100" rx="24" fill="url(#peakTile)"/>
+    <path d="M27 66 L50 35 L73 66" fill="none" stroke="#fff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+</defs></svg>
+
+<!-- ribbon -->
+<div class="ribbon"><span class="tag" data-i18n="ribbon.tag">Free test build</span><span data-i18n="ribbon.text">Peak Savings is in private testing on iOS — screens shown are samples.</span></div>
+
+<!-- nav -->
+<header class="nav"><div class="nav-in">
+  <a class="brand" href="#top"><svg class="mark"><use href="#peakmark"/></svg>Peak Savings<span class="chip" data-i18n="brand.chip">Beta</span></a>
+  <div class="lang" role="group" aria-label="Language">
+    <button data-lang="en" class="on">EN</button>
+    <button data-lang="zh-Hant">繁</button>
+  </div>
+  <a class="btn btn-primary" href="#join" data-i18n="cta.join">Join the test</a>
+</div></header>
+
+<main id="top">
+
+<!-- hero -->
+<section class="hero"><div class="wrap hero-grid">
+  <div>
+    <span class="pill-privacy"><span class="dot"></span><span data-i18n="hero.pill">100% on-device · nothing leaves your phone</span></span>
+    <h1 class="hero-title" data-i18n="hero.title">Know where your money goes. <span class="pink">Keep more of it.</span></h1>
+    <p class="hero-sub" data-i18n="hero.sub">Peak Savings reads your bank statements right on your iPhone — no login, no cloud — and turns them into a clear picture that helps you decide where to cut and keep more each month.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary btn-lg" href="#join" data-i18n="cta.join.arrow">Join the test ↗</a>
+      <a class="btn btn-ghost btn-lg" href="#app" data-i18n="cta.see">See the app</a>
+    </div>
+    <p class="hero-note" data-i18n="hero.note">Free · iOS · English · 繁體中文</p>
+  </div>
+  <div class="hero-shot">
+    <!-- HERO — Overview (language-aware: -en / -zh) -->
+    <div class="phone"><div class="screen">
+      <img src="screens/overview-en.png"
+           data-en="screens/overview-en.png" data-zh="screens/overview-zh.png"
+           alt="Peak Savings — spending overview by category"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="ph"><span class="ico">📲</span><span><b>screens/overview-en.png</b><br>Overview screenshot</span></div>
+    </div></div>
+  </div>
+</div></section>
+
+<!-- privacy band (the hook) -->
+<section class="band"><div class="wrap">
+  <span class="eyebrow" data-i18n="priv.eyebrow">Privacy is the whole point</span>
+  <h2 data-i18n="priv.h2">Your bank data never leaves your phone.</h2>
+  <p class="lead" data-i18n="priv.lead">Most finance apps want your bank login and send your transactions to their servers. Peak Savings does the opposite — your statements are read on the device and the analysis stays there. No account to create, nothing to leak.</p>
+  <div class="pgrid">
+    <div class="pc"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><h3 data-i18n="priv1.h3">Read on-device</h3><p data-i18n="priv1.p">Statements are parsed on your iPhone and reconciled to the printed balance — to the cent.</p></div>
+    <div class="pc"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg></div><h3 data-i18n="priv2.h3">No bank login</h3><p data-i18n="priv2.p">You add a statement file — that's it. We never ask for your online-banking password.</p></div>
+    <div class="pc"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M21 12a9 9 0 1 1-9-9"/><path d="M12 7v5l3 2"/></svg></div><h3 data-i18n="priv3.h3">Nothing sent out</h3><p data-i18n="priv3.p">No cloud, no analytics on your spending, no ads. Delete the app and your data is gone with it.</p></div>
+  </div>
+</div></section>
+
+<!-- the app (screenshots) -->
+<section class="section" id="app"><div class="wrap">
+  <div class="sec-head">
+    <span class="eyebrow" data-i18n="app.eyebrow">The app</span>
+    <h2 data-i18n="app.h2">A clear picture in seconds.</h2>
+    <p data-i18n="app.sub">Your total spend, where it goes by category, and the merchants behind it — all read straight from your statements.</p>
+  </div>
+  <div class="shots">
+    <!-- Re-categorise arc (language-aware: -en / -zh) -->
+    <figure class="shot"><div class="phone"><div class="screen">
+      <img src="screens/recategorise-en.png"
+           data-en="screens/recategorise-en.png" data-zh="screens/recategorise-zh.png"
+           alt="Fix any category in a tap"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="ph"><span class="ico">🏷️</span><span><b>screens/recategorise-en.png</b><br>fix any label in a tap</span></div>
+    </div></div><figcaption data-i18n="cap3">Make every label yours</figcaption></figure>
+  </div>
+</div></section>
+
+<!-- why it matters: insight -> decisions -> savings -->
+<section class="section" id="save"><div class="wrap">
+  <div class="sec-head">
+    <span class="eyebrow" data-i18n="save.eyebrow">Not just numbers — decisions</span>
+    <h2 data-i18n="save.h2">When you can see it, you can change it.</h2>
+    <p data-i18n="save.sub">Peak Savings doesn't just display your spending. Putting it all in one clear view is the part that makes you act — most people are surprised by their own totals.</p>
+  </div>
+  <div class="why-grid">
+    <div class="why-item"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="20" x2="4" y2="13"/><line x1="10" y1="20" x2="10" y2="5"/><line x1="16" y1="20" x2="16" y2="10"/><line x1="2.5" y1="20" x2="20" y2="20"/></svg></div><p data-i18n="save1">The total feels real.<small>One honest number, and the month finally adds up.</small></p></div>
+    <div class="why-item"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></div><p data-i18n="save2">Catch the quiet repeats.<small>Spot the HK$ you forgot you pay every month.</small></p></div>
+    <div class="why-item"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88"/><path d="M14.47 14.48 20 20"/><path d="M8.12 8.12 12 12"/></svg></div><p data-i18n="save3">Decide, then keep more.<small>Cut what doesn't earn its place — and save.</small></p></div>
+  </div>
+</div></section>
+
+<!-- CTA -->
+<section class="cta-strip" id="join"><div class="wrap">
+  <div class="cta-card">
+    <h2 data-i18n="cta.h2">Be one of the first.</h2>
+    <p data-i18n="cta.p">Peak Savings is free and in private testing on iOS. Add your email and we'll send you a TestFlight invite.</p>
+    <a class="btn btn-white btn-lg" href="mailto:hello@peaksavings.app?subject=Join%20the%20Peak%20Savings%20test" data-i18n="cta.btn">Get a TestFlight invite</a>
+    <!-- TODO: swap the mailto for a real signup form / TestFlight public link when ready. -->
+  </div>
+</div></section>
+
+</main>
+
+<footer><div class="wrap">
+  <div class="fb"><svg class="mark"><use href="#peakmark"/></svg>Peak Savings</div>
+  <div class="legal" data-i18n="footer.legal">A private, on-device way to see where your money goes. Built in Hong Kong. Your statements stay on your phone. © 2026 Peak Savings — private test build.</div>
+</div></footer>
+
+<script>
+/* Bilingual EN / 繁體中文. Default English; choice remembered. */
+const I18N = {
+  "en": {
+    "ribbon.tag":"Free test build",
+    "ribbon.text":"Peak Savings is in private testing on iOS — screens shown are samples.",
+    "brand.chip":"Beta",
+    "cta.join":"Join the test",
+    "cta.join.arrow":"Join the test ↗",
+    "cta.see":"See the app",
+    "hero.pill":"100% on-device · nothing leaves your phone",
+    "hero.title":"Know where your money goes. <span class=\"pink\">Keep more of it.</span>",
+    "hero.sub":"Peak Savings reads your bank statements right on your iPhone — no login, no cloud — and turns them into a clear picture that helps you decide where to cut and keep more each month.",
+    "hero.note":"Free · iOS · English · 繁體中文",
+    "priv.eyebrow":"Privacy is the whole point",
+    "priv.h2":"Your bank data never leaves your phone.",
+    "priv.lead":"Most finance apps want your bank login and send your transactions to their servers. Peak Savings does the opposite — your statements are read on the device and the analysis stays there. No account to create, nothing to leak.",
+    "priv1.h3":"Read on-device",
+    "priv1.p":"Statements are parsed on your iPhone and reconciled to the printed balance — to the cent.",
+    "priv2.h3":"No bank login",
+    "priv2.p":"You add a statement file — that's it. We never ask for your online-banking password.",
+    "priv3.h3":"Nothing sent out",
+    "priv3.p":"No cloud, no analytics on your spending, no ads. Delete the app and your data is gone with it.",
+    "app.eyebrow":"The app",
+    "app.h2":"A clear picture in seconds.",
+    "app.sub":"Your total spend, where it goes by category, and the merchants behind it — all read straight from your statements.",
+    "cap1":"Where it goes, by category",
+    "cap2":"Tap in for the detail",
+    "cap3":"Make every label yours",
+    "save.eyebrow":"Not just numbers — decisions",
+    "save.h2":"When you can see it, you can change it.",
+    "save.sub":"Peak Savings doesn't just display your spending. Putting it all in one clear view is the part that makes you act — most people are surprised by their own totals.",
+    "save1":"The total feels real.<small>One honest number, and the month finally adds up.</small>",
+    "save2":"Catch the quiet repeats.<small>Spot the HK$ you forgot you pay every month.</small>",
+    "save3":"Decide, then keep more.<small>Cut what doesn't earn its place — and save.</small>",
+    "cta.h2":"Be one of the first.",
+    "cta.p":"Peak Savings is free and in private testing on iOS. Add your email and we'll send you a TestFlight invite.",
+    "cta.btn":"Get a TestFlight invite",
+    "footer.legal":"A private, on-device way to see where your money goes. Built in Hong Kong. Your statements stay on your phone. © 2026 Peak Savings — private test build."
+  },
+  "zh-Hant": {
+    "ribbon.tag":"免費測試版",
+    "ribbon.text":"Peak Savings 正在 iOS 上進行私密測試 — 畫面為示例。",
+    "brand.chip":"測試版",
+    "cta.join":"加入測試",
+    "cta.join.arrow":"加入測試 ↗",
+    "cta.see":"看看實際畫面",
+    "hero.pill":"100% 在裝置上運行 · 資料不離開你的手機",
+    "hero.title":"看清你的錢花在哪，<span class=\"pink\">自然留得更多。</span>",
+    "hero.sub":"Peak Savings 直接在你的 iPhone 上讀取銀行月結單 — 毋須網銀登入、不上雲端 — 把數字化成清晰的全貌，幫你決定哪裡該慳，每月留住更多。",
+    "hero.note":"免費 · iOS · 繁體中文 · English",
+    "priv.eyebrow":"私隱，正是重點",
+    "priv.h2":"你的銀行資料，永不離開手機。",
+    "priv.lead":"大部分理財 App 都要你的網銀登入，再把交易紀錄上傳到它們的伺服器。Peak Savings 剛好相反 — 月結單只在裝置上讀取，分析也只留在你手機。毋須開戶口，沒有資料可洩漏。",
+    "priv1.h3":"在裝置上讀取",
+    "priv1.p":"月結單在你的 iPhone 上分析，並與單上結餘核對 — 準確到每一分。",
+    "priv2.h3":"毋須網銀登入",
+    "priv2.p":"你只需加入月結單檔案，就這麼簡單。我們從不索取你的網銀密碼。",
+    "priv3.h3":"資料絕不外傳",
+    "priv3.p":"沒有雲端、不分析你的消費、沒有廣告。刪除 App，資料亦一併消失。",
+    "app.eyebrow":"App 一覽",
+    "app.h2":"幾秒看清全貌。",
+    "app.sub":"你的總支出、各類別的去向，以及背後的商戶 — 全部直接從月結單讀取。",
+    "cap1":"按類別看錢的去向",
+    "cap2":"點一下看細項",
+    "cap3":"每個分類，由你話事",
+    "save.eyebrow":"不只是數字 — 是決定",
+    "save.h2":"看得見，才改得到。",
+    "save.sub":"Peak Savings 不只是把消費列出來。把一切放進同一個清晰畫面，才是讓你行動的關鍵 — 大部分人都會被自己的總數嚇一跳。",
+    "save1":"總數變得真實。<small>一個誠實的數字，整個月終於對得上。</small>",
+    "save2":"揪出默默重複的支出。<small>找出你每月不知不覺付出的 HK$。</small>",
+    "save3":"做個決定，留住更多。<small>砍掉不值得的，慳到錢。</small>",
+    "cta.h2":"成為首批用戶。",
+    "cta.p":"Peak Savings 完全免費，正在 iOS 上私密測試。留下電郵，我們會寄上 TestFlight 邀請。",
+    "cta.btn":"索取 TestFlight 邀請",
+    "footer.legal":"一個私密、在裝置上運行的方式，看清你的錢花在哪。香港製造。你的月結單只留在手機。© 2026 Peak Savings — 私密測試版。"
+  }
+};
+function setLang(l){
+  if(!I18N[l]) l="en";
+  document.documentElement.lang = (l==="zh-Hant") ? "zh-Hant" : "en";
+  const dict = I18N[l];
+  document.querySelectorAll("[data-i18n]").forEach(function(el){
+    const k = el.getAttribute("data-i18n");
+    if(dict[k] != null) el.innerHTML = dict[k];
+  });
+  document.querySelectorAll("img[data-en]").forEach(function(im){
+    const s = (l === "zh-Hant") ? im.dataset.zh : im.dataset.en;
+    if(s){ im.src = s; im.style.display = ""; if(im.nextElementSibling) im.nextElementSibling.style.display = "none"; }
+  });
+  document.querySelectorAll(".lang button").forEach(function(b){
+    b.classList.toggle("on", b.dataset.lang === l);
+  });
+  try{ localStorage.setItem("ps_lang", l); }catch(e){}
+}
+document.querySelectorAll(".lang button").forEach(function(b){
+  b.addEventListener("click", function(){ setLang(b.dataset.lang); });
+});
+let saved = "en";
+try{ saved = localStorage.getItem("ps_lang") || "en"; }catch(e){}
+setLang(saved);
+</script>
+
+</body>
+</html>
