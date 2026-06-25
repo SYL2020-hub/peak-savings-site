@@ -153,13 +153,13 @@ footer .legal{max-width:62ch;margin:8px auto 0;line-height:1.6}
   .cta-card{padding:38px 20px}
   .why-item{padding:18px}
   /* phone mockups: smaller so the screenshots don't dominate on a phone */
-  .phone{width:min(220px,calc(100vw - 130px));border-radius:34px;padding:8px;box-shadow:0 14px 36px rgba(23,23,26,.15)}
-  .phone .screen{border-radius:26px}
+  .phone{width:min(186px,calc(100vw - 170px));border-radius:30px;padding:7px;box-shadow:0 14px 36px rgba(23,23,26,.15)}
+  .phone .screen{border-radius:23px}
 }
 @media(max-width:400px){
   h1.hero-title{font-size:26px}
   .hero-note{font-size:12px}
-  .phone{width:min(196px,calc(100vw - 120px))}
+  .phone{width:min(164px,calc(100vw - 160px))}
   .lang button{padding:5px 9px;font-size:12px}
   .nav .btn-primary{font-size:13px;padding:9px 13px}
 }
@@ -237,7 +237,7 @@ footer .legal{max-width:62ch;margin:8px auto 0;line-height:1.6}
     <p data-i18n="app.sub">Your total spend, where it goes by category, and the merchants behind it — all read straight from your statements.</p>
   </div>
   <div class="shots">
-    <!-- Re-categorise arc (language-aware: -en / -zh) -->
+    <!-- 1 · Re-categorise arc (language-aware: -en / -zh) -->
     <figure class="shot"><div class="phone"><div class="screen">
       <img src="screens/recategorise-en.png"
            data-en="screens/recategorise-en.png" data-zh="screens/recategorise-zh.png"
@@ -245,6 +245,14 @@ footer .legal{max-width:62ch;margin:8px auto 0;line-height:1.6}
            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
       <div class="ph"><span class="ico">🏷️</span><span><b>screens/recategorise-en.png</b><br>fix any label in a tap</span></div>
     </div></div><figcaption data-i18n="cap3">Make every label yours</figcaption></figure>
+    <!-- 2 · Savings (language-aware) -->
+    <figure class="shot"><div class="phone"><div class="screen">
+      <img src="screens/savings-en.png"
+           data-en="screens/savings-en.png" data-zh="screens/savings-zh.png"
+           alt="Your savings, month by month"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="ph"><span class="ico">📈</span><span><b>screens/savings-en.png</b><br>savings by month</span></div>
+    </div></div><figcaption data-i18n="cap.savings">See what you keep</figcaption></figure>
   </div>
 </div></section>
 
@@ -308,6 +316,8 @@ const I18N = {
     "cap1":"Where it goes, by category",
     "cap2":"Tap in for the detail",
     "cap3":"Make every label yours",
+    "cap.savings":"See what you keep",
+    "cap.dark":"Light or dark — your call",
     "save.eyebrow":"Not just numbers — decisions",
     "save.h2":"When you can see it, you can change it.",
     "save.sub":"Peak Savings doesn't just display your spending. Putting it all in one clear view is the part that makes you act — most people are surprised by their own totals.",
@@ -345,6 +355,8 @@ const I18N = {
     "cap1":"按類別看錢的去向",
     "cap2":"點一下看細項",
     "cap3":"每個分類，由你話事",
+    "cap.savings":"看清你儲下的",
+    "cap.dark":"淺色深色，隨你揀",
     "save.eyebrow":"不只是數字 — 是決定",
     "save.h2":"看得見，才改得到。",
     "save.sub":"Peak Savings 不只是把消費列出來。把一切放進同一個清晰畫面，才是讓你行動的關鍵 — 大部分人都會被自己的總數嚇一跳。",
