@@ -81,8 +81,9 @@ h1.hero-title .pink{color:var(--accent)}
 }
 
 /* phone screenshot frame (auto-fallback placeholder if image missing) */
-.phone{width:min(280px,calc(100vw - 60px));border-radius:42px;background:#0b0b0d;padding:10px;box-shadow:0 30px 80px rgba(23,23,26,.18)}
-.phone .screen{position:relative;border-radius:32px;overflow:hidden;background:var(--surface-2);aspect-ratio:9/19.5;display:flex}
+.phone{width:min(248px,calc(100vw - 60px));border-radius:40px;background:#0b0b0d;padding:9px;box-shadow:0 30px 80px rgba(23,23,26,.18)}
+/* native screenshot ratio (1206×2622) so nothing is cropped */
+.phone .screen{position:relative;border-radius:30px;overflow:hidden;background:var(--surface-2);aspect-ratio:1206/2622;display:flex}
 .phone .screen img{width:100%;height:100%;object-fit:cover;display:block}
 .phone .ph{display:none;flex:1;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--text-3);font-size:12.5px;font-weight:600;text-align:center;padding:20px;border:2px dashed var(--border);border-radius:32px}
 .phone .ph b{color:var(--text-2)}
@@ -122,6 +123,8 @@ h1.hero-title .pink{color:var(--accent)}
 .cta-card{background:linear-gradient(160deg,var(--hero-a),var(--hero-b));border-radius:var(--r-xl);padding:54px 32px;color:#fff;box-shadow:var(--shadow-hero);max-width:760px;margin:0 auto}
 .cta-card h2{font-family:var(--font-serif);font-size:34px;letter-spacing:-.8px;margin:0 0 12px;font-weight:600}
 .cta-card p{color:rgba(255,255,255,.85);font-size:16.5px;margin:0 0 26px}
+.cta-card .geo-note{display:inline-flex;align-items:flex-start;gap:7px;margin:22px auto 0;font-size:13px;line-height:1.5;color:rgba(255,255,255,.72);max-width:48ch;text-align:left}
+.cta-card .geo-note svg{flex:0 0 auto;margin-top:2px;opacity:.85}
 .btn-white{background:#fff;color:var(--accent)}
 .btn-white:hover{background:#fff;transform:translateY(-1px)}
 
@@ -130,6 +133,9 @@ footer{background:var(--text-1);color:rgba(255,255,255,.6);padding:40px 0;font-s
 footer .fb{display:inline-flex;align-items:center;gap:10px;color:#fff;font-family:var(--font-serif);font-size:18px;font-weight:600;margin-bottom:10px}
 footer .fb .mark{width:26px;height:26px}
 footer .legal{max-width:62ch;margin:8px auto 0;line-height:1.6}
+footer .flinks{display:flex;gap:18px;justify-content:center;margin:6px 0 4px;flex-wrap:wrap}
+footer .flinks a{color:rgba(255,255,255,.8);text-decoration:none;font-weight:600;font-size:13px}
+footer .flinks a:hover{color:#fff}
 
 @media(max-width:600px){
   .wrap{padding:0 18px}
@@ -155,6 +161,12 @@ footer .legal{max-width:62ch;margin:8px auto 0;line-height:1.6}
   /* phone mockups: smaller so the screenshots don't dominate on a phone */
   .phone{width:min(186px,calc(100vw - 170px));border-radius:30px;padding:7px;box-shadow:0 14px 36px rgba(23,23,26,.15)}
   .phone .screen{border-radius:23px}
+  /* the two app shots sit SIDE BY SIDE on phones, sized to fit the row */
+  .shots{gap:12px;flex-wrap:nowrap;align-items:flex-start}
+  .shot{flex:1 1 0;min-width:0;max-width:none;gap:10px}
+  .shots .phone{width:100%;padding:6px;border-radius:26px}
+  .shots .phone .screen{border-radius:21px}
+  .shot figcaption{font-size:12px;max-width:18ch}
 }
 @media(max-width:400px){
   h1.hero-title{font-size:26px}
@@ -277,6 +289,7 @@ footer .legal{max-width:62ch;margin:8px auto 0;line-height:1.6}
     <p data-i18n="cta.p">Peak Savings is free and in private testing on iOS. Add your email and we'll send you a TestFlight invite.</p>
     <a class="btn btn-white btn-lg" href="mailto:hello@peaksavings.app?subject=Join%20the%20Peak%20Savings%20test" data-i18n="cta.btn">Get a TestFlight invite</a>
     <!-- TODO: swap the mailto for a real signup form / TestFlight public link when ready. -->
+    <p class="geo-note"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span data-i18n="geo.note">Built for Hong Kong — the test build reads HSBC Hong Kong statements for now. More banks and regions are coming.</span></p>
   </div>
 </div></section>
 
@@ -284,6 +297,11 @@ footer .legal{max-width:62ch;margin:8px auto 0;line-height:1.6}
 
 <footer><div class="wrap">
   <div class="fb"><svg class="mark"><use href="#peakmark"/></svg>Peak Savings</div>
+  <nav class="flinks">
+    <a href="/privacy.html" data-i18n="footer.privacy">Privacy</a>
+    <a href="/terms.html" data-i18n="footer.terms">Terms</a>
+    <a href="mailto:hello@peaksavings.app" data-i18n="footer.contact">Contact</a>
+  </nav>
   <div class="legal" data-i18n="footer.legal">A private, on-device way to see where your money goes. Built in Hong Kong. Your statements stay on your phone. © 2026 Peak Savings — private test build.</div>
 </div></footer>
 
@@ -327,6 +345,10 @@ const I18N = {
     "cta.h2":"Be one of the first.",
     "cta.p":"Peak Savings is free and in private testing on iOS. Add your email and we'll send you a TestFlight invite.",
     "cta.btn":"Get a TestFlight invite",
+    "geo.note":"Built for Hong Kong — the test build reads HSBC Hong Kong statements for now. More banks and regions are coming.",
+    "footer.privacy":"Privacy",
+    "footer.terms":"Terms",
+    "footer.contact":"Contact",
     "footer.legal":"A private, on-device way to see where your money goes. Built in Hong Kong. Your statements stay on your phone. © 2026 Peak Savings — private test build."
   },
   "zh-Hant": {
@@ -366,6 +388,10 @@ const I18N = {
     "cta.h2":"成為首批用戶。",
     "cta.p":"Peak Savings 完全免費，正在 iOS 上私密測試。留下電郵，我們會寄上 TestFlight 邀請。",
     "cta.btn":"索取 TestFlight 邀請",
+    "geo.note":"為香港而設 — 測試版暫時讀取滙豐香港月結單，更多銀行及地區即將推出。",
+    "footer.privacy":"私隱政策",
+    "footer.terms":"使用條款",
+    "footer.contact":"聯絡我們",
     "footer.legal":"一個私密、在裝置上運行的方式，看清你的錢花在哪。香港製造。你的月結單只留在手機。© 2026 Peak Savings — 私密測試版。"
   }
 };
