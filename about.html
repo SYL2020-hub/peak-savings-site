@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About — Peak Savings</title>
+<meta name="description" content="About Peak Savings: a private, on-device money app built for Hong Kong, and its open roadmap." />
+<meta property="og:title" content="About — Peak Savings" />
+<meta property="og:description" content="About Peak Savings: a private, on-device money app built for Hong Kong, and its open roadmap." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://peaksavings.app/about.html" />
+<meta property="og:site_name" content="Peak Savings" />
+<meta property="og:image" content="https://peaksavings.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Peak Savings — know where your money goes, keep more of it." />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://peaksavings.app/og-image.png" />
+<meta name="theme-color" content="#FFFFFF" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Crect%20width='100'%20height='100'%20rx='24'%20fill='%23FF2E8C'/%3E%3Cpath%20d='M27%2066%20L50%2035%20L73%2066'%20fill='none'%20stroke='%23fff'%20stroke-width='13'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3C/svg%3E" />
+<style>
+
+/* ============================================================
+   Peak Savings — landing page (simple, short, bilingual EN/繁).
+   Drop screenshots into landing/screens/ (filenames in each
+   placeholder) and they appear automatically.
+   ============================================================ */
+:root{
+  --bg:#FFFFFF; --surface-2:#F2F2F4; --surface-3:#E8E8EC; --hairline:#EBEBEE; --border:#A6A6AE;
+  --text-1:#17171A; --text-2:#55555C; --text-3:#A6A6AE;
+  --accent:#FF2E8C; --accent-press:#F01979; --accent-weak:#FFEAF3; --accent-line:#FFC2DD; --on-accent:#FFFFFF;
+  --hero-a:#FF2E8C; --hero-b:#D40070; --gain:#1F8A5F; --gain-weak:#DBEFE7;
+  --font-serif:Georgia,"Times New Roman",serif;
+  --font-sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;
+  --r-md:16px; --r-lg:20px; --r-xl:28px; --r-pill:999px;
+  --shadow-hero:0 10px 28px rgba(255,46,140,.28);
+  --ease:cubic-bezier(.22,.61,.36,1); --max:1040px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth} html,body{overflow-x:hidden}
+body{margin:0;background:var(--bg);color:var(--text-1);font-family:var(--font-sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+html[lang^="zh"] body{font-family:var(--font-sans),"PingFang HK","PingFang TC","Microsoft JhengHei",sans-serif}
+html[lang^="zh"] .amount,html[lang^="zh"] h1,html[lang^="zh"] h2{letter-spacing:0}
+img,svg{max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--accent)}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15px;border-radius:var(--r-pill);padding:13px 24px;border:1px solid transparent;cursor:pointer;transition:transform .15s var(--ease),background .15s var(--ease)}
+.btn-primary{background:var(--accent);color:var(--on-accent)}
+.btn-primary:hover{background:var(--accent-press);transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--text-1);border-color:var(--border)}
+.btn-ghost:hover{background:var(--surface-2)}
+.btn-lg{padding:15px 28px;font-size:15.5px}
+.btn:active{transform:translateY(0) scale(.98)}
+a:focus-visible,.btn:focus-visible,.lang button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:10px}
+
+/* ribbon */
+.ribbon{background:linear-gradient(90deg,var(--accent-weak),#FFF4F9);border-bottom:1px solid var(--accent-line);color:var(--accent-press);font-size:12.5px;font-weight:600;text-align:center;padding:9px 16px}
+.ribbon .tag{display:inline-block;background:var(--accent);color:#fff;font-weight:700;font-size:10.5px;letter-spacing:.6px;padding:2px 8px;border-radius:5px;text-transform:uppercase;margin-right:8px}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--hairline)}
+.nav-in{display:flex;align-items:center;gap:12px;height:64px;max-width:var(--max);margin:0 auto;padding:0 24px}
+.brand{display:flex;align-items:center;gap:11px;font-family:var(--font-serif);font-weight:600;font-size:20px;letter-spacing:-.3px}
+.brand .chip{font-family:var(--font-sans);font-size:9.5px;font-weight:700;letter-spacing:.6px;color:var(--accent);background:var(--accent-weak);border:1px solid var(--accent-line);padding:2px 6px;border-radius:6px;text-transform:uppercase}
+.mark{width:34px;height:34px;border-radius:24%;display:block}
+.nav-links{display:flex;align-items:center;gap:20px;margin-left:auto}
+.nav-links a{font-size:14px;font-weight:600;color:var(--text-1)}
+.nav-links a:hover,.nav-links a.active{color:var(--accent)}
+.lang{display:inline-flex;align-items:center;gap:2px;background:var(--surface-2);border:1px solid var(--hairline);border-radius:var(--r-pill);padding:3px;margin-left:14px}
+.lang button{border:none;background:transparent;cursor:pointer;font:inherit;font-size:12.5px;font-weight:700;color:var(--text-2);padding:5px 11px;border-radius:var(--r-pill);line-height:1;transition:all .15s var(--ease)}
+.lang button.on{background:var(--text-1);color:#fff}
+.lang button:not(.on):hover{color:var(--text-1)}
+.nav .btn-primary{padding:10px 18px;font-size:14px}
+
+/* hero */
+.hero{padding:72px 0 36px}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.pill-privacy{display:inline-flex;align-items:center;gap:8px;background:var(--surface-2);border:1px solid var(--hairline);border-radius:var(--r-pill);padding:7px 14px;font-size:12.5px;font-weight:600;color:var(--text-2);margin-bottom:22px}
+.pill-privacy .dot{width:7px;height:7px;border-radius:50%;background:var(--gain);box-shadow:0 0 0 3px var(--gain-weak);flex:0 0 auto}
+h1.hero-title{font-family:var(--font-serif);font-weight:600;font-size:52px;line-height:1.05;letter-spacing:-1.3px;margin:0 0 18px;text-wrap:balance}
+h1.hero-title .pink{color:var(--accent)}
+.hero-sub{font-size:18px;color:var(--text-2);line-height:1.6;max-width:38ch;margin:0 0 26px;text-wrap:pretty}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.hero-note{font-size:13px;color:var(--text-3);margin-top:16px}
+.hero-shot{display:flex;justify-content:center;position:relative}
+.hero-shot::after{content:"";position:absolute;inset:auto 0 -8% 0;height:55%;background:radial-gradient(50% 60% at 50% 50%,rgba(255,46,140,.20),transparent 70%);filter:blur(20px);z-index:-1}
+@media(max-width:880px){
+  .hero-grid{grid-template-columns:1fr;gap:34px;text-align:center}
+  h1.hero-title{font-size:38px}
+  .hero-sub{margin-left:auto;margin-right:auto}
+  .hero-cta,.pill-privacy{justify-content:center;margin-left:auto;margin-right:auto}
+}
+
+/* phone screenshot frame (auto-fallback placeholder if image missing) */
+.phone{width:min(248px,calc(100vw - 60px));border-radius:40px;background:#0b0b0d;padding:9px;box-shadow:0 30px 80px rgba(23,23,26,.18)}
+/* native screenshot ratio (1206×2622) so nothing is cropped */
+.phone .screen{position:relative;border-radius:30px;overflow:hidden;background:var(--surface-2);aspect-ratio:1206/2622;display:flex}
+.phone .screen img{width:100%;height:100%;object-fit:cover;display:block}
+.phone .ph{display:none;flex:1;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--text-3);font-size:12.5px;font-weight:600;text-align:center;padding:20px;border:2px dashed var(--border);border-radius:32px}
+.phone .ph b{color:var(--text-2)}
+.phone .ph .ico{font-size:26px}
+
+/* privacy band */
+.band{background:var(--text-1);color:#fff;padding:64px 0;margin-top:24px}
+.band .eyebrow{color:var(--accent-line)}
+.band h2{font-family:var(--font-serif);font-size:32px;letter-spacing:-.8px;margin:12px 0 12px;font-weight:600;max-width:20ch;text-wrap:balance}
+.band p.lead{color:rgba(255,255,255,.7);font-size:16.5px;max-width:54ch;margin:0 0 36px;text-wrap:pretty}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.pc{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--r-lg);padding:22px}
+.pc .ic{width:40px;height:40px;border-radius:12px;background:var(--accent);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.pc h3{font-size:15.5px;margin:0 0 7px}
+.pc p{font-size:13.5px;color:rgba(255,255,255,.62);margin:0;line-height:1.55}
+@media(max-width:760px){.pgrid{grid-template-columns:1fr}}
+
+/* showcase */
+.section{padding:72px 0}
+.sec-head{text-align:center;max-width:600px;margin:0 auto 44px}
+.sec-head h2{font-family:var(--font-serif);font-size:36px;letter-spacing:-1px;margin:12px 0 12px;font-weight:600;text-wrap:balance}
+.sec-head p{font-size:16.5px;color:var(--text-2);margin:0;text-wrap:pretty}
+.shots{display:flex;gap:30px;justify-content:center;flex-wrap:wrap}
+.shot{display:flex;flex-direction:column;align-items:center;gap:14px;max-width:280px;margin:0}
+.shot figcaption{font-size:13.5px;color:var(--text-2);font-weight:600;text-align:center;max-width:24ch}
+
+/* why-it-matters (insight -> decisions -> savings) */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:780px;margin:36px auto 0}
+.why-item{background:var(--surface-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:22px;text-align:left}
+.why-item .ic{width:38px;height:38px;border-radius:11px;background:var(--accent-weak);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:12px}
+.why-item p{margin:0;font-size:14.5px;color:var(--text-1);font-weight:600;line-height:1.5}
+.why-item p small{display:block;font-weight:500;color:var(--text-2);margin-top:5px;font-size:12.5px;line-height:1.5}
+@media(max-width:700px){.why-grid{grid-template-columns:1fr;gap:14px}}
+
+/* CTA strip */
+.cta-strip{text-align:center;padding:80px 0}
+.cta-card{background:linear-gradient(160deg,var(--hero-a),var(--hero-b));border-radius:var(--r-xl);padding:54px 32px;color:#fff;box-shadow:var(--shadow-hero);max-width:760px;margin:0 auto}
+.cta-card h2{font-family:var(--font-serif);font-size:34px;letter-spacing:-.8px;margin:0 0 12px;font-weight:600}
+.cta-card p{color:rgba(255,255,255,.85);font-size:16.5px;margin:0 0 26px}
+.cta-card .geo-note{display:inline-flex;align-items:flex-start;gap:7px;margin:22px auto 0;font-size:13px;line-height:1.5;color:rgba(255,255,255,.72);max-width:48ch;text-align:left}
+.cta-card .geo-note svg{flex:0 0 auto;margin-top:2px;opacity:.85}
+.btn-white{background:#fff;color:var(--accent)}
+.btn-white:hover{background:#fff;transform:translateY(-1px)}
+
+/* footer */
+footer{background:var(--text-1);color:rgba(255,255,255,.6);padding:40px 0;font-size:13px;text-align:center}
+footer .fb{display:inline-flex;align-items:center;gap:10px;color:#fff;font-family:var(--font-serif);font-size:18px;font-weight:600;margin-bottom:10px}
+footer .fb .mark{width:26px;height:26px}
+footer .legal{max-width:62ch;margin:8px auto 0;line-height:1.6}
+footer .flinks{display:flex;gap:18px;justify-content:center;margin:6px 0 4px;flex-wrap:wrap}
+footer .flinks a{color:rgba(255,255,255,.8);text-decoration:none;font-weight:600;font-size:13px}
+footer .flinks a:hover{color:#fff}
+
+@media(max-width:600px){
+  .wrap{padding:0 18px}
+  /* nav: stop the brand wrapping, hide the BETA chip, shrink controls */
+  .nav-in{gap:8px;height:58px;padding:0 16px}
+  .brand{font-size:16px;gap:7px;white-space:nowrap}
+  .brand .mark{width:28px;height:28px}
+  .brand .chip{display:none}
+  .nav-links{display:none}
+  .lang{padding:2px;margin-left:auto}
+  .lang button{padding:4px 9px;font-size:11.5px}
+  .nav .btn-primary{padding:8px 12px;font-size:12.5px;white-space:nowrap}
+  .hero{padding:36px 0 12px}
+  .section{padding:46px 0}
+  h1.hero-title{font-size:30px;letter-spacing:-1px}
+  .hero-sub{font-size:16px;max-width:none}
+  .hero-cta .btn{flex:1 1 auto;justify-content:center}
+  .sec-head{margin-bottom:30px}
+  .sec-head h2,.cta-card h2,.band h2,.pt-copy h2{font-size:25px}
+  .sec-head p,.band p.lead{font-size:15px}
+  .band{padding:48px 0}
+  .cta-card{padding:38px 20px}
+  .why-item{padding:18px}
+  /* phone mockups: smaller so the screenshots don't dominate on a phone */
+  .phone{width:min(186px,calc(100vw - 170px));border-radius:30px;padding:7px;box-shadow:0 14px 36px rgba(23,23,26,.15)}
+  .phone .screen{border-radius:23px}
+  /* the two app shots sit SIDE BY SIDE on phones, sized to fit the row */
+  .shots{gap:12px;flex-wrap:nowrap;align-items:flex-start}
+  .shot{flex:1 1 0;min-width:0;max-width:none;gap:10px}
+  .shots .phone{width:100%;padding:6px;border-radius:26px}
+  .shots .phone .screen{border-radius:21px}
+  .shot figcaption{font-size:12px;max-width:18ch}
+}
+@media(max-width:400px){
+  h1.hero-title{font-size:26px}
+  .hero-note{font-size:12px}
+  .phone{width:min(164px,calc(100vw - 160px))}
+  .lang button{padding:5px 9px;font-size:12px}
+  .nav .btn-primary{font-size:13px;padding:9px 13px}
+}
+
+/* ---- content pages (FAQ / About) ---- */
+.page-head{padding:56px 0 8px;text-align:center}
+.page-head .eyebrow{display:block;margin-bottom:10px}
+.page-head h1{font-family:var(--font-serif);font-weight:600;font-size:40px;letter-spacing:-1px;margin:0 0 12px;text-wrap:balance}
+.page-head p{font-size:17px;color:var(--text-2);max-width:56ch;margin:0 auto;text-wrap:pretty}
+.content{max-width:760px;margin:0 auto;padding:0 24px}
+/* FAQ accordion */
+.faq-group{margin:34px 0 0}
+.faq-group h2{font-family:var(--font-serif);font-size:20px;font-weight:600;letter-spacing:-.3px;margin:0 0 4px;padding-bottom:8px;border-bottom:1px solid var(--hairline)}
+details.qa{border-bottom:1px solid var(--hairline)}
+details.qa>summary{list-style:none;cursor:pointer;padding:15px 42px 15px 2px;position:relative;font-weight:600;font-size:15.5px;color:var(--text-1)}
+details.qa>summary::-webkit-details-marker{display:none}
+details.qa>summary::after{content:"+";position:absolute;right:8px;top:50%;transform:translateY(-50%);font-size:20px;font-weight:400;color:var(--accent)}
+details.qa[open]>summary::after{content:"\2013"}
+details.qa>summary:hover{color:var(--accent)}
+details.qa .a{padding:0 2px 18px;color:var(--text-2);font-size:15px;line-height:1.65;max-width:66ch}
+details.qa .a a{color:var(--accent);font-weight:600}
+/* About story */
+.story{max-width:720px;margin:2px auto 0}
+.story .lead{font-size:18px;color:var(--text-2);line-height:1.6;text-wrap:pretty;margin:0 0 6px}
+.story h2{font-family:var(--font-serif);font-size:22px;font-weight:600;margin:28px 0 8px}
+.story p{color:var(--text-2);font-size:15.5px;line-height:1.65;margin:0}
+/* roadmap */
+.rm-key{display:flex;flex-wrap:wrap;gap:10px 20px;justify-content:center;margin:4px 0 28px;font-size:12.5px;color:var(--text-2);font-weight:600}
+.rm-key span{display:inline-flex;align-items:center;gap:6px}
+.rm-key i{width:9px;height:9px;border-radius:50%;display:inline-block}
+.rm-cols{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.rm-col{background:var(--surface-2);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:18px}
+.rm-col h3{font-size:13px;letter-spacing:.3px;margin:0 0 3px;font-weight:700}
+.rm-col .sub{font-size:12px;color:var(--text-3);margin:0 0 14px;font-weight:500}
+.rm-col ul{list-style:none;margin:0;padding:0}
+.rm-col li{position:relative;padding:0 0 0 18px;margin:0 0 11px;font-size:13.5px;color:var(--text-1);line-height:1.45}
+.rm-col li:last-child{margin-bottom:0}
+.rm-col li::before{content:"";position:absolute;left:0;top:6px;width:8px;height:8px;border-radius:50%;background:var(--dot,var(--accent))}
+.rm-col.done{--dot:var(--gain)} .rm-col.now{--dot:var(--accent)} .rm-col.next{--dot:#E0A800} .rm-col.later{--dot:var(--text-3)}
+.rm-note{text-align:center;color:var(--text-3);font-size:13px;margin:24px auto 0;max-width:60ch}
+.rm-note a{color:var(--accent);font-weight:600}
+.mini-cta{text-align:center;padding:22px 0 8px}
+@media(max-width:900px){.rm-cols{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.rm-cols{grid-template-columns:1fr}.page-head h1{font-size:32px}.page-head{padding:40px 0 4px}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <linearGradient id="peakTile" x1="0" y1="0" x2="0.85" y2="1">
+    <stop offset="0" stop-color="#FF4D9E"/><stop offset=".55" stop-color="#FF2E8C"/><stop offset="1" stop-color="#D40070"/>
+  </linearGradient>
+  <symbol id="peakmark" viewBox="0 0 100 100">
+    <rect width="100" height="100" rx="24" fill="url(#peakTile)"/>
+    <path d="M27 66 L50 35 L73 66" fill="none" stroke="#fff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+</defs></svg>
+
+<div class="ribbon"><span class="tag" data-i18n="ribbon.tag">Free test build</span><span data-i18n="ribbon.text">Peak Savings is in open testing on iOS — screens shown are samples.</span></div>
+
+<header class="nav"><div class="nav-in">
+  <a class="brand" href="index.html"><svg class="mark"><use href="#peakmark"/></svg>Peak Savings<span class="chip" data-i18n="brand.chip">Beta</span></a>
+  <nav class="nav-links">
+    <a href="about.html" class="active" data-i18n="nav.about">About</a>
+    <a href="faq.html" data-i18n="nav.faq">FAQ</a>
+  </nav>
+  <div class="lang" role="group" aria-label="Language">
+    <button data-lang="en" class="on">EN</button>
+    <button data-lang="zh-Hant">繁</button>
+  </div>
+  <a class="btn btn-primary" href="https://testflight.apple.com/join/5Bj5cvVx" target="_blank" rel="noopener" data-i18n="cta.join">Join the test</a>
+</div></header>
+
+<main id="top">
+
+<section class="page-head"><div class="wrap">
+  <span class="eyebrow" data-i18n="ab.eyebrow">About</span>
+  <h1 data-i18n="ab.h1">A private way to see where your money goes.</h1>
+  <p data-i18n="ab.sub">What Peak Savings is, why it exists, and where it's headed — in the open.</p>
+</div></section>
+
+<section class="section" style="padding-top:12px"><div class="content story">
+  <p class="lead" data-i18n="ab.lead">Peak Savings started as a personal tool: a way to see where the money actually went each month, without handing a bank login to yet another app. It turned out other people wanted the same thing.</p>
+  <h2 data-i18n="ab.s1h">Private by design</h2>
+  <p data-i18n="ab.s1p">It reads your bank statements on your phone and keeps them there. No account, no bank login, no cloud, no ads. Nothing is uploaded — there is no server on our side that could even receive it.</p>
+  <h2 data-i18n="ab.s2h">Built for Hong Kong first</h2>
+  <p data-i18n="ab.s2p">Today it understands HSBC Hong Kong statements and local merchants. More banks and regions are the goal — the plan is to grow beyond Hong Kong once the core is solid.</p>
+  <h2 data-i18n="ab.s3h">Made in the open</h2>
+  <p data-i18n="ab.s3p">It's built by a small team, shipping in small steps and testing as we go. The roadmap below is the real one — it's how we decide what comes next.</p>
+</div></section>
+
+<section class="section" id="roadmap" style="padding-top:6px"><div class="wrap">
+  <div class="sec-head">
+    <span class="eyebrow" data-i18n="rm.eyebrow">Open roadmap</span>
+    <h2 data-i18n="rm.h2">Where things stand today.</h2>
+    <p data-i18n="rm.sub">Honest and current as of September 2026. Priorities move — tell us what you'd want next.</p>
+  </div>
+  <div class="rm-key">
+    <span><i style="background:var(--gain)"></i><span data-i18n="rm.k1">Shipped</span></span>
+    <span><i style="background:var(--accent)"></i><span data-i18n="rm.k2">Building now</span></span>
+    <span><i style="background:#E0A800"></i><span data-i18n="rm.k3">Next (v1.0)</span></span>
+    <span><i style="background:var(--text-3)"></i><span data-i18n="rm.k4">Idea</span></span>
+  </div>
+  <div class="rm-cols">
+    <div class="rm-col done">
+      <h3 data-i18n="rm1t">✅ Shipped</h3><div class="sub" data-i18n="rm1s">Already in the app</div>
+      <ul>
+        <li data-i18n="rm1_1">On-device import (HSBC HK), reconciled to the cent</li>
+        <li data-i18n="rm1_2">Overview &amp; categories with drill-down</li>
+        <li data-i18n="rm1_3">Merchants — re-categorise anything</li>
+        <li data-i18n="rm1_4">Subscriptions — recurring charges</li>
+        <li data-i18n="rm1_5">Savings — income vs expenses, 12-month chart</li>
+        <li data-i18n="rm1_6">Named accounts, drag-and-drop</li>
+        <li data-i18n="rm1_7">One-tap hide amounts</li>
+        <li data-i18n="rm1_8">English + Traditional Chinese</li>
+      </ul>
+    </div>
+    <div class="rm-col now">
+      <h3 data-i18n="rm2t">🔨 Building now</h3><div class="sub" data-i18n="rm2s">The Android version</div>
+      <ul>
+        <li data-i18n="rm2_1">Reading statements on Android — proving the hard part first</li>
+        <li data-i18n="rm2_2">Then the app, matching iOS to the cent</li>
+      </ul>
+    </div>
+    <div class="rm-col next">
+      <h3 data-i18n="rm3t">⏳ Next — v1.0</h3><div class="sub" data-i18n="rm3s">First wide release</div>
+      <ul>
+        <li data-i18n="rm3_1">Public TestFlight install — live</li>
+        <li data-i18n="rm3_2">In-app “Send feedback”</li>
+        <li data-i18n="rm3_3">Privacy &amp; Terms inside the app</li>
+        <li data-i18n="rm3_4">Release notes</li>
+      </ul>
+    </div>
+    <div class="rm-col later">
+      <h3 data-i18n="rm4t">💡 Ideas</h3><div class="sub" data-i18n="rm4s">On the list, not scheduled</div>
+      <ul>
+        <li data-i18n="rm4_1">Add &amp; edit your own merchants</li>
+        <li data-i18n="rm4_2">Export to Excel</li>
+        <li data-i18n="rm4_3">CSV import → more banks</li>
+        <li data-i18n="rm4_4">More regions</li>
+        <li data-i18n="rm4_5">Alerts, widgets, search</li>
+        <li data-i18n="rm4_6">Simplified Chinese</li>
+      </ul>
+    </div>
+  </div>
+  <p class="rm-note" data-i18n="rm.note">Want something on this list moved up — or something new added? Email <a href="mailto:info@peaksavings.app">info@peaksavings.app</a>.</p>
+</div></section>
+
+<section class="mini-cta" style="padding-bottom:44px"><div class="wrap">
+  <a class="btn btn-primary btn-lg" href="https://testflight.apple.com/join/5Bj5cvVx" target="_blank" rel="noopener" data-i18n="ab.cta">Try it — join the test ↗</a>
+</div></section>
+
+</main>
+
+<footer><div class="wrap">
+  <div class="fb"><svg class="mark"><use href="#peakmark"/></svg>Peak Savings</div>
+  <nav class="flinks">
+    <a href="index.html" data-i18n="footer.home">Home</a>
+    <a href="about.html" data-i18n="footer.about">About</a>
+    <a href="faq.html" data-i18n="footer.faq">FAQ</a>
+    <a href="/privacy.html" data-i18n="footer.privacy">Privacy</a>
+    <a href="/terms.html" data-i18n="footer.terms">Terms</a>
+    <a href="mailto:info@peaksavings.app" data-i18n="footer.contact">Contact</a>
+  </nav>
+  <div class="legal" data-i18n="footer.legal">A private, on-device way to see where your money goes. Built in Hong Kong. Your statements stay on your phone. © 2026 Peak Savings — free test build.</div>
+</div></footer>
+
+<script>
+var I18N = { "zh-Hant": {"ribbon.tag": "免費測試版", "ribbon.text": "Peak Savings 正在 iOS 上公開測試 — 畫面為示例。", "brand.chip": "測試版", "nav.about": "關於", "nav.faq": "常見問題", "cta.join": "加入測試", "footer.home": "首頁", "footer.about": "關於", "footer.faq": "常見問題", "footer.privacy": "私隱政策", "footer.terms": "使用條款", "footer.contact": "聯絡我們", "footer.legal": "一個私密、在裝置上運行的方式，看清你的錢花在哪。香港製造。你的月結單只留在手機。© 2026 Peak Savings — 免費測試版。", "ab.eyebrow": "關於", "ab.h1": "一個私密的方式，看清你的錢花在哪。", "ab.sub": "Peak Savings 是什麼、為何存在，以及未來方向 — 全部公開。", "ab.lead": "Peak Savings 最初只是一個個人工具：一個不用把網銀登入交給又一個 App，就能看清每月錢去了哪裡的方法。後來發現，原來很多人都想要同樣的東西。", "ab.s1h": "以私隱為本", "ab.s1p": "它在你的手機上讀取月結單，並只留在手機。沒有帳戶、沒有網銀登入、沒有雲端、沒有廣告。什麼都不會上傳 — 我們這邊根本沒有伺服器可以接收。", "ab.s2h": "先為香港而設", "ab.s2p": "目前它讀懂滙豐香港的月結單和本地商戶。走出香港、支援更多銀行和地區，是我們的目標 — 待核心做得夠穩，就會擴展。", "ab.s3h": "公開地打造", "ab.s3p": "它由一個小團隊打造，一小步一小步地推出，邊做邊測試。下面的路線圖就是真實的那份 — 我們就是靠它決定下一步。", "rm.eyebrow": "公開路線圖", "rm.h2": "目前的進度。", "rm.sub": "誠實而即時，截至 2026 年 9 月。優先次序會變 — 告訴我們你最想要什麼。", "rm.k1": "已推出", "rm.k2": "正在開發", "rm.k3": "下一步（v1.0）", "rm.k4": "構想", "rm1t": "✅ 已推出", "rm1s": "App 內已有", "rm1_1": "裝置上匯入（滙豐香港），核對到每一分", "rm1_2": "總覽與類別，可深入查看", "rm1_3": "商戶 — 任何一筆都可重新分類", "rm1_4": "訂閱 — 經常性扣費偵測", "rm1_5": "儲蓄 — 收入對支出、12 個月圖表", "rm1_6": "命名帳戶、拖放排序", "rm1_7": "一按隱藏金額", "rm1_8": "英文 + 繁體中文", "rm2t": "🔨 正在開發", "rm2s": "Android 版本", "rm2_1": "在 Android 上讀取月結單 — 先攻克最難的部分", "rm2_2": "再做 App，與 iOS 一樣準確到分", "rm3t": "⏳ 下一步 — v1.0", "rm3s": "首個公開版本", "rm3_1": "公開 TestFlight 安裝 — 已上線", "rm3_2": "App 內「傳送意見」", "rm3_3": "App 內私隱與條款", "rm3_4": "更新說明", "rm4t": "💡 構想", "rm4s": "在清單上，未排期", "rm4_1": "新增及編輯你自己的商戶", "rm4_2": "匯出至 Excel", "rm4_3": "CSV 匯入 → 更多銀行", "rm4_4": "更多地區", "rm4_5": "提示、小工具、搜尋", "rm4_6": "簡體中文", "rm.note": "想把清單上的東西提前，或加入新項目？電郵 <a href=\"mailto:info@peaksavings.app\">info@peaksavings.app</a>。", "ab.cta": "試用 — 加入測試 ↗"} };
+(function(){
+  var EN = new Map();
+  document.querySelectorAll("[data-i18n]").forEach(function(el){ EN.set(el, el.innerHTML); });
+  var zh = I18N["zh-Hant"] || {};
+  function setLang(l){
+    if(l!=="zh-Hant") l="en";
+    document.documentElement.lang = l;
+    document.querySelectorAll("[data-i18n]").forEach(function(el){
+      var k = el.getAttribute("data-i18n");
+      if(l==="en"){ el.innerHTML = EN.get(el); return; }
+      el.innerHTML = (zh[k]!=null) ? zh[k] : EN.get(el);
+    });
+    document.querySelectorAll(".lang button").forEach(function(b){ b.classList.toggle("on", b.dataset.lang===l); });
+    try{ localStorage.setItem("ps_lang", l); }catch(e){}
+  }
+  document.querySelectorAll(".lang button").forEach(function(b){ b.addEventListener("click", function(){ setLang(b.dataset.lang); }); });
+  var saved="en"; try{ saved=localStorage.getItem("ps_lang")||"en"; }catch(e){}
+  setLang(saved);
+})();
+</script>
+
+</body>
+</html>
