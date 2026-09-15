@@ -17,7 +17,14 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="https://peaksavings.app/og-image.png" />
 <meta name="theme-color" content="#FFFFFF" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Crect%20width='100'%20height='100'%20rx='24'%20fill='%23FF2E8C'/%3E%3Cpath%20d='M27%2066%20L50%2035%20L73%2066'%20fill='none'%20stroke='%23fff'%20stroke-width='13'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3C/svg%3E" />
+<link rel="canonical" href="https://peaksavings.app/" />
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Peak Savings","operatingSystem":"iOS","applicationCategory":"FinanceApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"HKD"},"description":"Peak Savings reads your bank statements on your iPhone and shows where your money goes — privately, on-device. Free, in open testing on TestFlight.","url":"https://peaksavings.app/","image":"https://peaksavings.app/og-image.png"}
+</script>
 <style>
 /* ============================================================
    Peak Savings — landing page (simple, short, bilingual EN/繁).
@@ -138,6 +145,10 @@ h1.hero-title .pink{color:var(--accent)}
 .cta-card .geo-note svg{flex:0 0 auto;margin-top:2px;opacity:.85}
 .btn-white{background:#fff;color:var(--accent)}
 .btn-white:hover{background:#fff;transform:translateY(-1px)}
+.cta-qr{display:inline-flex;align-items:center;gap:14px;margin:22px auto 0;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);border-radius:16px;padding:12px 16px;max-width:380px}
+.cta-qr img{width:92px;height:92px;border-radius:10px;background:#fff;padding:6px;flex:0 0 auto}
+.cta-qr span{font-size:13px;color:rgba(255,255,255,.92);text-align:left;line-height:1.45;font-weight:600}
+@media(max-width:600px){.cta-qr{display:none}}
 
 /* footer */
 footer{background:var(--text-1);color:rgba(255,255,255,.6);padding:40px 0;font-size:13px;text-align:center}
@@ -155,8 +166,11 @@ footer .flinks a:hover{color:#fff}
   .brand{font-size:16px;gap:7px;white-space:nowrap}
   .brand .mark{width:28px;height:28px}
   .brand .chip{display:none}
-  .nav-links{display:none}
-  .lang{padding:2px;margin-left:auto}
+  /* keep About/FAQ visible on phones; drop the redundant header CTA (hero + CTA section still have it) */
+  .nav-links{gap:14px}
+  .nav-links a{font-size:13.5px}
+  .nav .btn-primary{display:none}
+  .lang{padding:2px}
   .lang button{padding:4px 9px;font-size:11.5px}
   .nav .btn-primary{padding:8px 12px;font-size:12.5px;white-space:nowrap}
   .hero{padding:36px 0 12px}
@@ -184,8 +198,10 @@ footer .flinks a:hover{color:#fff}
   h1.hero-title{font-size:26px}
   .hero-note{font-size:12px}
   .phone{width:min(164px,calc(100vw - 160px))}
-  .lang button{padding:5px 9px;font-size:12px}
-  .nav .btn-primary{font-size:13px;padding:9px 13px}
+  .brand{font-size:15px;gap:6px}
+  .nav-links{gap:11px}
+  .nav-links a{font-size:13px}
+  .lang button{padding:5px 8px;font-size:11.5px}
 }
 </style>
 </head>
@@ -236,7 +252,7 @@ footer .flinks a:hover{color:#fff}
   <div class="hero-shot">
     <!-- HERO — Overview (language-aware: -en / -zh) -->
     <div class="phone"><div class="screen">
-      <img src="screens/overview-en.png"
+      <img src="screens/overview-en.png" width="1206" height="2622" fetchpriority="high"
            data-en="screens/overview-en.png" data-zh="screens/overview-zh.png"
            alt="Peak Savings — spending overview by category"
            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
@@ -267,7 +283,7 @@ footer .flinks a:hover{color:#fff}
   <div class="shots">
     <!-- 1 · Re-categorise arc (language-aware: -en / -zh) -->
     <figure class="shot"><div class="phone"><div class="screen">
-      <img src="screens/recategorise-en.png"
+      <img src="screens/recategorise-en.png" width="1206" height="2622" loading="lazy"
            data-en="screens/recategorise-en.png" data-zh="screens/recategorise-zh.png"
            alt="Fix any category in a tap"
            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
@@ -275,7 +291,7 @@ footer .flinks a:hover{color:#fff}
     </div></div><figcaption data-i18n="cap3">Make every label yours</figcaption></figure>
     <!-- 2 · Savings (language-aware) -->
     <figure class="shot"><div class="phone"><div class="screen">
-      <img src="screens/savings-en.png"
+      <img src="screens/savings-en.png" width="1206" height="2622" loading="lazy"
            data-en="screens/savings-en.png" data-zh="screens/savings-zh.png"
            alt="Your savings, month by month"
            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
@@ -304,6 +320,10 @@ footer .flinks a:hover{color:#fff}
     <h2 data-i18n="cta.h2">Be one of the first.</h2>
     <p data-i18n="cta.p">Peak Savings is free and in open testing on iOS. Tap below to install it via TestFlight — no invite or sign-up needed.</p>
     <a class="btn btn-white btn-lg" href="https://testflight.apple.com/join/5Bj5cvVx" target="_blank" rel="noopener" data-i18n="cta.btn">Join the test on TestFlight ↗</a>
+    <div class="cta-qr">
+      <img src="qr-testflight.png" width="120" height="120" loading="lazy" alt="QR code to install Peak Savings via TestFlight">
+      <span data-i18n="cta.qr">On a computer? Scan this to install on your phone.</span>
+    </div>
     <p class="geo-note"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span data-i18n="geo.note">Built for Hong Kong — the test build reads HSBC Hong Kong statements for now. More banks and regions are coming.</span></p>
   </div>
 </div></section>
@@ -364,6 +384,7 @@ const I18N = {
     "cta.h2":"Be one of the first.",
     "cta.p":"Peak Savings is free and in open testing on iOS. Tap below to install it via TestFlight — no invite or sign-up needed.",
     "cta.btn":"Join the test on TestFlight ↗",
+    "cta.qr":"On a computer? Scan this to install on your phone.",
     "geo.note":"Built for Hong Kong — the test build reads HSBC Hong Kong statements for now. More banks and regions are coming.",
     "footer.privacy":"Privacy",
     "footer.terms":"Terms",
@@ -411,6 +432,7 @@ const I18N = {
     "cta.h2":"成為首批用戶。",
     "cta.p":"Peak Savings 完全免費，現已在 iOS 公開測試。點下面即可經 TestFlight 安裝 — 毋須邀請或登記。",
     "cta.btn":"經 TestFlight 加入測試 ↗",
+    "cta.qr":"用電腦瀏覽？掃描即可在手機安裝。",
     "geo.note":"為香港而設 — 測試版暫時讀取滙豐香港月結單，更多銀行及地區即將推出。",
     "footer.privacy":"私隱政策",
     "footer.terms":"使用條款",
