@@ -4,9 +4,9 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Peak Savings — Know where your money goes. Keep more of it.</title>
-<meta name="description" content="Peak Savings reads your bank statements on your iPhone and turns them into a clear picture that helps you decide and save. Nothing leaves your phone. Free, in open testing on TestFlight." />
+<meta name="description" content="Peak Savings reads your bank statements on your phone and turns them into a clear picture that helps you decide and save. Nothing leaves your phone. Free, in testing on iOS and Android." />
 <meta property="og:title" content="Peak Savings — Know where your money goes. Keep more of it." />
-<meta property="og:description" content="Reads your bank statements on your iPhone and turns them into a clear picture that helps you decide and save. Nothing leaves your device. Free, in open testing on TestFlight." />
+<meta property="og:description" content="Reads your bank statements on your phone and turns them into a clear picture that helps you decide and save. Nothing leaves your device. Free, in testing on iOS and Android." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://peaksavings.app/" />
 <meta property="og:site_name" content="Peak Savings" />
@@ -23,7 +23,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 <link rel="manifest" href="/site.webmanifest" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Peak Savings","operatingSystem":"iOS","applicationCategory":"FinanceApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"HKD"},"description":"Peak Savings reads your bank statements on your iPhone and shows where your money goes — privately, on-device. Free, in open testing on TestFlight.","url":"https://peaksavings.app/","image":"https://peaksavings.app/og-image.png"}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Peak Savings","operatingSystem":"iOS, Android","applicationCategory":"FinanceApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"HKD"},"description":"Peak Savings reads your bank statements on your phone and shows where your money goes — privately, on-device. Free, in testing on iOS and Android.","url":"https://peaksavings.app/","image":"https://peaksavings.app/og-image.png"}
 </script>
 <style>
 /* ============================================================
@@ -145,6 +145,9 @@ h1.hero-title .pink{color:var(--accent)}
 .cta-card .geo-note svg{flex:0 0 auto;margin-top:2px;opacity:.85}
 .btn-white{background:#fff;color:var(--accent)}
 .btn-white:hover{background:#fff;transform:translateY(-1px)}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-outline-white{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
+.btn-outline-white:hover{background:rgba(255,255,255,.12);transform:translateY(-1px)}
 .cta-qr{display:inline-flex;align-items:center;gap:14px;margin:22px auto 0;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);border-radius:16px;padding:12px 16px;max-width:380px}
 .cta-qr img{width:92px;height:92px;border-radius:10px;background:#fff;padding:6px;flex:0 0 auto}
 .cta-qr span{font-size:13px;color:rgba(255,255,255,.92);text-align:left;line-height:1.45;font-weight:600}
@@ -219,7 +222,7 @@ footer .flinks a:hover{color:#fff}
 </defs></svg>
 
 <!-- ribbon -->
-<div class="ribbon"><span class="tag" data-i18n="ribbon.tag">Free test build</span><span data-i18n="ribbon.text">Peak Savings is in open testing on iOS — screens shown are samples.</span></div>
+<div class="ribbon"><span class="tag" data-i18n="ribbon.tag">Free test build</span><span data-i18n="ribbon.text">Peak Savings is in free testing on iOS and Android — screens shown are samples.</span></div>
 
 <!-- nav -->
 <header class="nav"><div class="nav-in">
@@ -242,12 +245,12 @@ footer .flinks a:hover{color:#fff}
   <div>
     <span class="pill-privacy"><span class="dot"></span><span data-i18n="hero.pill">100% on-device · nothing leaves your phone</span></span>
     <h1 class="hero-title" data-i18n="hero.title">Know where your money goes. <span class="pink">Keep more of it.</span></h1>
-    <p class="hero-sub" data-i18n="hero.sub">Peak Savings reads your bank statements right on your iPhone — no login, no cloud — and turns them into a clear picture that helps you decide where to cut and keep more each month.</p>
+    <p class="hero-sub" data-i18n="hero.sub">Peak Savings reads your bank statements right on your phone — no login, no cloud — and turns them into a clear picture that helps you decide where to cut and keep more each month.</p>
     <div class="hero-cta">
       <a class="btn btn-primary btn-lg" href="#join" data-i18n="cta.join.arrow">Join the test ↗</a>
       <a class="btn btn-ghost btn-lg" href="#app" data-i18n="cta.see">See the app</a>
     </div>
-    <p class="hero-note" data-i18n="hero.note">Free · iOS · English · 繁體中文</p>
+    <p class="hero-note" data-i18n="hero.note">Free · iOS & Android · English · 繁體中文</p>
   </div>
   <div class="hero-shot">
     <!-- HERO — Overview (language-aware: -en / -zh) -->
@@ -267,7 +270,7 @@ footer .flinks a:hover{color:#fff}
   <h2 data-i18n="priv.h2">Your bank data never leaves your phone.</h2>
   <p class="lead" data-i18n="priv.lead">Most finance apps want your bank login and send your transactions to their servers. Peak Savings does the opposite — your statements are read on the device and the analysis stays there. No account to create, nothing to leak.</p>
   <div class="pgrid">
-    <div class="pc"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><h3 data-i18n="priv1.h3">Read on-device</h3><p data-i18n="priv1.p">Statements are parsed on your iPhone and reconciled to the printed balance — to the cent.</p></div>
+    <div class="pc"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><h3 data-i18n="priv1.h3">Read on-device</h3><p data-i18n="priv1.p">Statements are parsed on your phone and reconciled to the printed balance — to the cent.</p></div>
     <div class="pc"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg></div><h3 data-i18n="priv2.h3">No bank login</h3><p data-i18n="priv2.p">You add a statement file — that's it. We never ask for your online-banking password.</p></div>
     <div class="pc"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M21 12a9 9 0 1 1-9-9"/><path d="M12 7v5l3 2"/></svg></div><h3 data-i18n="priv3.h3">Nothing sent out</h3><p data-i18n="priv3.p">No cloud, no analytics on your spending, no ads. Delete the app and your data is gone with it.</p></div>
   </div>
@@ -318,13 +321,16 @@ footer .flinks a:hover{color:#fff}
 <section class="cta-strip" id="join"><div class="wrap">
   <div class="cta-card">
     <h2 data-i18n="cta.h2">Be one of the first.</h2>
-    <p data-i18n="cta.p">Peak Savings is free and in open testing on iOS. Tap below to install it via TestFlight — no invite or sign-up needed.</p>
-    <a class="btn btn-white btn-lg" href="https://testflight.apple.com/join/5Bj5cvVx" target="_blank" rel="noopener" data-i18n="cta.btn">Join the test on TestFlight ↗</a>
+    <p data-i18n="cta.p">Peak Savings is free and in testing on iOS and Android. Install on iPhone via TestFlight, or request access for Android.</p>
+    <div class="cta-btns">
+      <a class="btn btn-white btn-lg" href="https://testflight.apple.com/join/5Bj5cvVx" target="_blank" rel="noopener" data-i18n="cta.btn">Join the test on TestFlight ↗</a>
+      <a class="btn btn-outline-white btn-lg" href="mailto:info@peaksavings.app?subject=Android%20test%20access" data-i18n="cta.android">Android — request access</a>
+    </div>
     <div class="cta-qr">
       <img src="qr-testflight.png" width="120" height="120" loading="lazy" alt="QR code to install Peak Savings via TestFlight">
-      <span data-i18n="cta.qr">On a computer? Scan this to install on your phone.</span>
+      <span data-i18n="cta.qr">On a computer? Scan to install on iPhone (TestFlight).</span>
     </div>
-    <p class="geo-note"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span data-i18n="geo.note">Built for Hong Kong — the test build reads HSBC Hong Kong statements for now. More banks and regions are coming.</span></p>
+    <p class="geo-note"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span data-i18n="geo.note">Built for Hong Kong — the test build reads HSBC and Standard Chartered Hong Kong statements for now. More banks and regions are coming.</span></p>
   </div>
 </div></section>
 
@@ -347,7 +353,7 @@ footer .flinks a:hover{color:#fff}
 const I18N = {
   "en": {
     "ribbon.tag":"Free test build",
-    "ribbon.text":"Peak Savings is in open testing on iOS — screens shown are samples.",
+    "ribbon.text":"Peak Savings is in free testing on iOS and Android — screens shown are samples.",
     "brand.chip":"Beta",
     "nav.about":"About",
     "nav.faq":"FAQ",
@@ -356,13 +362,13 @@ const I18N = {
     "cta.see":"See the app",
     "hero.pill":"100% on-device · nothing leaves your phone",
     "hero.title":"Know where your money goes. <span class=\"pink\">Keep more of it.</span>",
-    "hero.sub":"Peak Savings reads your bank statements right on your iPhone — no login, no cloud — and turns them into a clear picture that helps you decide where to cut and keep more each month.",
-    "hero.note":"Free · iOS · English · 繁體中文",
+    "hero.sub":"Peak Savings reads your bank statements right on your phone — no login, no cloud — and turns them into a clear picture that helps you decide where to cut and keep more each month.",
+    "hero.note":"Free · iOS & Android · English · 繁體中文",
     "priv.eyebrow":"Privacy is the whole point",
     "priv.h2":"Your bank data never leaves your phone.",
     "priv.lead":"Most finance apps want your bank login and send your transactions to their servers. Peak Savings does the opposite — your statements are read on the device and the analysis stays there. No account to create, nothing to leak.",
     "priv1.h3":"Read on-device",
-    "priv1.p":"Statements are parsed on your iPhone and reconciled to the printed balance — to the cent.",
+    "priv1.p":"Statements are parsed on your phone and reconciled to the printed balance — to the cent.",
     "priv2.h3":"No bank login",
     "priv2.p":"You add a statement file — that's it. We never ask for your online-banking password.",
     "priv3.h3":"Nothing sent out",
@@ -382,10 +388,11 @@ const I18N = {
     "save2":"Catch the quiet repeats.<small>Spot the HK$ you forgot you pay every month.</small>",
     "save3":"Decide, then keep more.<small>Cut what doesn't earn its place — and save.</small>",
     "cta.h2":"Be one of the first.",
-    "cta.p":"Peak Savings is free and in open testing on iOS. Tap below to install it via TestFlight — no invite or sign-up needed.",
+    "cta.p":"Peak Savings is free and in testing on iOS and Android. Install on iPhone via TestFlight, or request access for Android.",
     "cta.btn":"Join the test on TestFlight ↗",
-    "cta.qr":"On a computer? Scan this to install on your phone.",
-    "geo.note":"Built for Hong Kong — the test build reads HSBC Hong Kong statements for now. More banks and regions are coming.",
+    "cta.android":"Android — request access",
+    "cta.qr":"On a computer? Scan to install on iPhone (TestFlight).",
+    "geo.note":"Built for Hong Kong — the test build reads HSBC and Standard Chartered Hong Kong statements for now. More banks and regions are coming.",
     "footer.privacy":"Privacy",
     "footer.terms":"Terms",
     "footer.about":"About",
@@ -395,7 +402,7 @@ const I18N = {
   },
   "zh-Hant": {
     "ribbon.tag":"免費測試版",
-    "ribbon.text":"Peak Savings 正在 iOS 上公開測試 — 畫面為示例。",
+    "ribbon.text":"Peak Savings 正在 iOS 及 Android 上測試 — 畫面為示例。",
     "brand.chip":"測試版",
     "nav.about":"關於",
     "nav.faq":"常見問題",
@@ -404,13 +411,13 @@ const I18N = {
     "cta.see":"看看實際畫面",
     "hero.pill":"100% 在裝置上運行 · 資料不離開你的手機",
     "hero.title":"看清你的錢花在哪，<span class=\"pink\">自然留得更多。</span>",
-    "hero.sub":"Peak Savings 直接在你的 iPhone 上讀取銀行月結單 — 毋須網銀登入、不上雲端 — 把數字化成清晰的全貌，幫你決定哪裡該慳，每月留住更多。",
-    "hero.note":"免費 · iOS · 繁體中文 · English",
+    "hero.sub":"Peak Savings 直接在你的手機上讀取銀行月結單 — 毋須網銀登入、不上雲端 — 把數字化成清晰的全貌，幫你決定哪裡該慳，每月留住更多。",
+    "hero.note":"免費 · iOS 及 Android · 繁體中文 · English",
     "priv.eyebrow":"私隱，正是重點",
     "priv.h2":"你的銀行資料，永不離開手機。",
     "priv.lead":"大部分理財 App 都要你的網銀登入，再把交易紀錄上傳到它們的伺服器。Peak Savings 剛好相反 — 月結單只在裝置上讀取，分析也只留在你手機。毋須開戶口，沒有資料可洩漏。",
     "priv1.h3":"在裝置上讀取",
-    "priv1.p":"月結單在你的 iPhone 上分析，並與單上結餘核對 — 準確到每一分。",
+    "priv1.p":"月結單在你的手機上分析，並與單上結餘核對 — 準確到每一分。",
     "priv2.h3":"毋須網銀登入",
     "priv2.p":"你只需加入月結單檔案，就這麼簡單。我們從不索取你的網銀密碼。",
     "priv3.h3":"資料絕不外傳",
@@ -430,10 +437,11 @@ const I18N = {
     "save2":"揪出默默重複的支出。<small>找出你每月不知不覺付出的 HK$。</small>",
     "save3":"做個決定，留住更多。<small>砍掉不值得的，慳到錢。</small>",
     "cta.h2":"成為首批用戶。",
-    "cta.p":"Peak Savings 完全免費，現已在 iOS 公開測試。點下面即可經 TestFlight 安裝 — 毋須邀請或登記。",
+    "cta.p":"Peak Savings 完全免費，現正於 iOS 及 Android 測試。iPhone 可經 TestFlight 安裝，Android 可申請加入。",
     "cta.btn":"經 TestFlight 加入測試 ↗",
-    "cta.qr":"用電腦瀏覽？掃描即可在手機安裝。",
-    "geo.note":"為香港而設 — 測試版暫時讀取滙豐香港月結單，更多銀行及地區即將推出。",
+    "cta.android":"Android — 申請加入測試",
+    "cta.qr":"用電腦瀏覽？掃描即可在 iPhone 安裝（TestFlight）。",
+    "geo.note":"為香港而設 — 測試版暫時讀取滙豐及渣打香港的月結單，更多銀行及地區即將推出。",
     "footer.privacy":"私隱政策",
     "footer.terms":"使用條款",
     "footer.about":"關於",

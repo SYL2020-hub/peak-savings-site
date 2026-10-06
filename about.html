@@ -143,6 +143,13 @@ h1.hero-title .pink{color:var(--accent)}
 .cta-card .geo-note svg{flex:0 0 auto;margin-top:2px;opacity:.85}
 .btn-white{background:#fff;color:var(--accent)}
 .btn-white:hover{background:#fff;transform:translateY(-1px)}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-outline-white{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
+.btn-outline-white:hover{background:rgba(255,255,255,.12);transform:translateY(-1px)}
+.cta-qr{display:inline-flex;align-items:center;gap:14px;margin:22px auto 0;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);border-radius:16px;padding:12px 16px;max-width:380px}
+.cta-qr img{width:92px;height:92px;border-radius:10px;background:#fff;padding:6px;flex:0 0 auto}
+.cta-qr span{font-size:13px;color:rgba(255,255,255,.92);text-align:left;line-height:1.45;font-weight:600}
+@media(max-width:600px){.cta-qr{display:none}}
 
 /* footer */
 footer{background:var(--text-1);color:rgba(255,255,255,.6);padding:40px 0;font-size:13px;text-align:center}
@@ -160,8 +167,11 @@ footer .flinks a:hover{color:#fff}
   .brand{font-size:16px;gap:7px;white-space:nowrap}
   .brand .mark{width:28px;height:28px}
   .brand .chip{display:none}
-  .nav-links{display:none}
-  .lang{padding:2px;margin-left:auto}
+  /* keep About/FAQ visible on phones; drop the redundant header CTA (hero + CTA section still have it) */
+  .nav-links{gap:14px}
+  .nav-links a{font-size:13.5px}
+  .nav .btn-primary{display:none}
+  .lang{padding:2px}
   .lang button{padding:4px 9px;font-size:11.5px}
   .nav .btn-primary{padding:8px 12px;font-size:12.5px;white-space:nowrap}
   .hero{padding:36px 0 12px}
@@ -189,8 +199,10 @@ footer .flinks a:hover{color:#fff}
   h1.hero-title{font-size:26px}
   .hero-note{font-size:12px}
   .phone{width:min(164px,calc(100vw - 160px))}
-  .lang button{padding:5px 9px;font-size:12px}
-  .nav .btn-primary{font-size:13px;padding:9px 13px}
+  .brand{font-size:15px;gap:6px}
+  .nav-links{gap:11px}
+  .nav-links a{font-size:13px}
+  .lang button{padding:5px 8px;font-size:11.5px}
 }
 
 /* ---- content pages (FAQ / About) ---- */
@@ -247,7 +259,7 @@ details.qa .a a{color:var(--accent);font-weight:600}
   </symbol>
 </defs></svg>
 
-<div class="ribbon"><span class="tag" data-i18n="ribbon.tag">Free test build</span><span data-i18n="ribbon.text">Peak Savings is in open testing on iOS — screens shown are samples.</span></div>
+<div class="ribbon"><span class="tag" data-i18n="ribbon.tag">Free test build</span><span data-i18n="ribbon.text">Peak Savings is in free testing on iOS and Android — screens shown are samples.</span></div>
 
 <header class="nav"><div class="nav-in">
   <a class="brand" href="index.html"><svg class="mark"><use href="#peakmark"/></svg>Peak Savings<span class="chip" data-i18n="brand.chip">Beta</span></a>
@@ -301,7 +313,7 @@ details.qa .a a{color:var(--accent);font-weight:600}
 </div></footer>
 
 <script>
-var I18N = { "zh-Hant": {"ribbon.tag": "免費測試版", "ribbon.text": "Peak Savings 正在 iOS 上公開測試 — 畫面為示例。", "brand.chip": "測試版", "nav.about": "關於", "nav.faq": "常見問題", "cta.join": "加入測試", "footer.home": "首頁", "footer.about": "關於", "footer.faq": "常見問題", "footer.privacy": "私隱政策", "footer.terms": "使用條款", "footer.contact": "聯絡我們", "footer.legal": "一個私密、在裝置上運行的方式，看清你的錢花在哪。香港製造。你的月結單只留在手機。© 2026 Peak Savings — 免費測試版。", "ab.eyebrow": "關於", "ab.h1": "一個私密的方式，看清你的錢花在哪。", "ab.sub": "Peak Savings 是什麼、為何存在，以及未來方向 — 全部公開。", "ab.lead": "Peak Savings 最初只是一個個人工具：一個不用把網銀登入交給又一個 App，就能看清每月錢去了哪裡的方法。後來發現，原來很多人都想要同樣的東西。", "ab.s1h": "以私隱為本", "ab.s1p": "它在你的手機上讀取月結單，並只留在手機。沒有帳戶、沒有網銀登入、沒有雲端、沒有廣告。什麼都不會上傳 — 我們這邊根本沒有伺服器可以接收。", "ab.s2h": "先為香港而設", "ab.s2p": "目前它讀懂滙豐香港的月結單和本地商戶。走出香港、支援更多銀行和地區，是我們的目標 — 待核心做得夠穩，就會擴展。", "ab.s3h": "公開地打造", "ab.s3p": "它由一個小團隊打造，一小步一小步地推出，邊做邊測試 — 每一位測試者的意見，都讓它變得更好。", "rm.eyebrow": "公開路線圖", "rm.h2": "目前的進度。", "rm.sub": "誠實而即時，截至 2026 年 9 月。優先次序會變 — 告訴我們你最想要什麼。", "rm.k1": "已推出", "rm.k2": "正在開發", "rm.k3": "下一步（v1.0）", "rm.k4": "構想", "rm1t": "✅ 已推出", "rm1s": "App 內已有", "rm1_1": "裝置上匯入（滙豐香港），核對到每一分", "rm1_2": "總覽與類別，可深入查看", "rm1_3": "商戶 — 任何一筆都可重新分類", "rm1_4": "訂閱 — 經常性扣費偵測", "rm1_5": "儲蓄 — 收入對支出、12 個月圖表", "rm1_6": "命名帳戶、拖放排序", "rm1_7": "一按隱藏金額", "rm1_8": "英文 + 繁體中文", "rm2t": "🔨 正在開發", "rm2s": "Android 版本", "rm2_1": "在 Android 上讀取月結單 — 先攻克最難的部分", "rm2_2": "再做 App，與 iOS 一樣準確到分", "rm3t": "⏳ 下一步 — v1.0", "rm3s": "首個公開版本", "rm3_1": "公開 TestFlight 安裝 — 已上線", "rm3_2": "App 內「傳送意見」", "rm3_3": "App 內私隱與條款", "rm3_4": "更新說明", "rm4t": "💡 構想", "rm4s": "在清單上，未排期", "rm4_1": "新增及編輯你自己的商戶", "rm4_2": "匯出至 Excel", "rm4_3": "CSV 匯入 → 更多銀行", "rm4_4": "更多地區", "rm4_5": "提示、小工具、搜尋", "rm4_6": "簡體中文", "rm.note": "想把清單上的東西提前，或加入新項目？電郵 <a href=\"mailto:info@peaksavings.app\">info@peaksavings.app</a>。", "ab.cta": "試用 — 加入測試 ↗"} };
+var I18N = { "zh-Hant": {"ribbon.tag": "免費測試版", "ribbon.text": "Peak Savings 正在 iOS 及 Android 上測試 — 畫面為示例。", "brand.chip": "測試版", "nav.about": "關於", "nav.faq": "常見問題", "cta.join": "加入測試", "footer.home": "首頁", "footer.about": "關於", "footer.faq": "常見問題", "footer.privacy": "私隱政策", "footer.terms": "使用條款", "footer.contact": "聯絡我們", "footer.legal": "一個私密、在裝置上運行的方式，看清你的錢花在哪。香港製造。你的月結單只留在手機。© 2026 Peak Savings — 免費測試版。", "ab.eyebrow": "關於", "ab.h1": "一個私密的方式，看清你的錢花在哪。", "ab.sub": "Peak Savings 是什麼、為何存在，以及未來方向 — 全部公開。", "ab.lead": "Peak Savings 最初只是一個個人工具：一個不用把網銀登入交給又一個 App，就能看清每月錢去了哪裡的方法。後來發現，原來很多人都想要同樣的東西。", "ab.s1h": "以私隱為本", "ab.s1p": "它在你的手機上讀取月結單，並只留在手機。沒有帳戶、沒有網銀登入、沒有雲端、沒有廣告。什麼都不會上傳 — 我們這邊根本沒有伺服器可以接收。", "ab.s2h": "先為香港而設", "ab.s2p": "目前它讀懂滙豐香港的月結單和本地商戶。走出香港、支援更多銀行和地區，是我們的目標 — 待核心做得夠穩，就會擴展。", "ab.s3h": "公開地打造", "ab.s3p": "它由一個小團隊打造，一小步一小步地推出，邊做邊測試 — 每一位測試者的意見，都讓它變得更好。", "rm.eyebrow": "公開路線圖", "rm.h2": "目前的進度。", "rm.sub": "誠實而即時，截至 2026 年 9 月。優先次序會變 — 告訴我們你最想要什麼。", "rm.k1": "已推出", "rm.k2": "正在開發", "rm.k3": "下一步（v1.0）", "rm.k4": "構想", "rm1t": "✅ 已推出", "rm1s": "App 內已有", "rm1_1": "裝置上匯入（滙豐香港），核對到每一分", "rm1_2": "總覽與類別，可深入查看", "rm1_3": "商戶 — 任何一筆都可重新分類", "rm1_4": "訂閱 — 經常性扣費偵測", "rm1_5": "儲蓄 — 收入對支出、12 個月圖表", "rm1_6": "命名帳戶、拖放排序", "rm1_7": "一按隱藏金額", "rm1_8": "英文 + 繁體中文", "rm2t": "🔨 正在開發", "rm2s": "Android 版本", "rm2_1": "在 Android 上讀取月結單 — 先攻克最難的部分", "rm2_2": "再做 App，與 iOS 一樣準確到分", "rm3t": "⏳ 下一步 — v1.0", "rm3s": "首個公開版本", "rm3_1": "公開 TestFlight 安裝 — 已上線", "rm3_2": "App 內「傳送意見」", "rm3_3": "App 內私隱與條款", "rm3_4": "更新說明", "rm4t": "💡 構想", "rm4s": "在清單上，未排期", "rm4_1": "新增及編輯你自己的商戶", "rm4_2": "匯出至 Excel", "rm4_3": "CSV 匯入 → 更多銀行", "rm4_4": "更多地區", "rm4_5": "提示、小工具、搜尋", "rm4_6": "簡體中文", "rm.note": "想把清單上的東西提前，或加入新項目？電郵 <a href=\"mailto:info@peaksavings.app\">info@peaksavings.app</a>。", "ab.cta": "試用 — 加入測試 ↗"} };
 (function(){
   var EN = new Map();
   document.querySelectorAll("[data-i18n]").forEach(function(el){ EN.set(el, el.innerHTML); });
