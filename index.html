@@ -148,6 +148,13 @@ h1.hero-title .pink{color:var(--accent)}
 .cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 .btn-outline-white{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
 .btn-outline-white:hover{background:rgba(255,255,255,.12);transform:translateY(-1px)}
+.cta-stores{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;align-items:center;margin-top:4px}
+.store-badge{display:inline-flex;transition:transform .15s var(--ease)}
+.store-badge:hover{transform:translateY(-1px)}
+.store-badge img{height:54px;width:auto;display:block}
+.badge-alt{display:none;flex-direction:column;justify-content:center;text-align:left;background:#000;color:#fff;border-radius:12px;padding:8px 20px;min-height:54px;min-width:150px}
+.badge-alt small{font-size:10px;letter-spacing:.5px;text-transform:uppercase;color:rgba(255,255,255,.72)}
+.badge-alt b{font-size:18px;font-weight:600;letter-spacing:-.2px;line-height:1.15}
 .cta-qr{display:inline-flex;align-items:center;gap:14px;margin:22px auto 0;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);border-radius:16px;padding:12px 16px;max-width:380px}
 .cta-qr img{width:92px;height:92px;border-radius:10px;background:#fff;padding:6px;flex:0 0 auto}
 .cta-qr span{font-size:13px;color:rgba(255,255,255,.92);text-align:left;line-height:1.45;font-weight:600}
@@ -322,9 +329,15 @@ footer .flinks a:hover{color:#fff}
   <div class="cta-card">
     <h2 data-i18n="cta.h2">Be one of the first.</h2>
     <p data-i18n="cta.p">Peak Savings is free and in testing on iOS and Android. Install on iPhone via TestFlight, or request access for Android.</p>
-    <div class="cta-btns">
-      <a class="btn btn-white btn-lg" href="https://testflight.apple.com/join/5Bj5cvVx" target="_blank" rel="noopener" data-i18n="cta.btn">Join the test on TestFlight ↗</a>
-      <a class="btn btn-outline-white btn-lg" href="mailto:info@peaksavings.app?subject=Android%20test%20access" data-i18n="cta.android">Android — request access</a>
+    <div class="cta-stores">
+      <a class="store-badge" href="https://testflight.apple.com/join/5Bj5cvVx" target="_blank" rel="noopener" aria-label="Apple App Store — TestFlight beta">
+        <img src="assets/appstore-badge.svg" alt="Download on the App Store — TestFlight beta" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-flex'">
+        <span class="badge-alt"><small data-i18n="store.ios.sub">TestFlight beta</small><b>App&nbsp;Store</b></span>
+      </a>
+      <a class="store-badge" href="mailto:info@peaksavings.app?subject=Android%20test%20access" aria-label="Google Play — request test access">
+        <img src="assets/googleplay-badge.png" alt="Get it on Google Play — request test access" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-flex'">
+        <span class="badge-alt"><small data-i18n="store.android.sub">Request access</small><b>Google&nbsp;Play</b></span>
+      </a>
     </div>
     <div class="cta-qr">
       <img src="qr-testflight.png" width="120" height="120" loading="lazy" alt="QR code to install Peak Savings via TestFlight">
@@ -391,6 +404,8 @@ const I18N = {
     "cta.p":"Peak Savings is free and in testing on iOS and Android. Install on iPhone via TestFlight, or request access for Android.",
     "cta.btn":"Join the test on TestFlight ↗",
     "cta.android":"Android — request access",
+    "store.ios.sub":"TestFlight beta",
+    "store.android.sub":"Request access",
     "cta.qr":"On a computer? Scan to install on iPhone (TestFlight).",
     "geo.note":"Built for Hong Kong — the test build reads HSBC and Standard Chartered Hong Kong statements for now. More banks and regions are coming.",
     "footer.privacy":"Privacy",
@@ -440,6 +455,8 @@ const I18N = {
     "cta.p":"Peak Savings 完全免費，現正於 iOS 及 Android 測試。iPhone 可經 TestFlight 安裝，Android 可申請加入。",
     "cta.btn":"經 TestFlight 加入測試 ↗",
     "cta.android":"Android — 申請加入測試",
+    "store.ios.sub":"TestFlight 測試版",
+    "store.android.sub":"申請加入測試",
     "cta.qr":"用電腦瀏覽？掃描即可在 iPhone 安裝（TestFlight）。",
     "geo.note":"為香港而設 — 測試版暫時讀取滙豐及渣打香港的月結單，更多銀行及地區即將推出。",
     "footer.privacy":"私隱政策",
